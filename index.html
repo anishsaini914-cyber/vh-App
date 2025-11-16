@@ -1,0 +1,159 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Neo Cyber Download</title>
+<style>
+    body {
+        margin: 0;
+        font-family: 'Orbitron', sans-serif;
+        background: #020b16;
+        color: #0A9C00;
+        height: 100vh;
+        overflow: hidden;
+    }
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, #00111f, #012d3d, #000c14);
+    z-index: -2;
+}
+body::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(#033, transparent 1px), linear-gradient(90deg, #033, transparent 1px);
+    background-size: 40px 40px;
+    opacity: 0.09;
+    z-index: -1;
+}
+.terminal {
+width: 95%;
+max-width: 800px;
+height: 70vh;
+margin: 20px auto;
+padding: 15px;
+border-radius: 10px;
+background: rgba(0, 20, 35, 0.65);
+border: 2px solid #1F9700;
+box-shadow: 0 0 20px #00eaffaa;
+overflow-y: auto;
+font-size: 16px;
+}
+@media (max-width: 600px) { .terminal { height: 65vh; font-size: 14px; padding: 10px; } }
+.download-area {
+position: absolute;
+bottom: 10px;
+left: 50%;
+transform: translateX(-50%);
+width: 95%;
+max-width: 400px;
+text-align: center;
+}
+@media (max-width: 600px) { .download-area { bottom: 5px; } }
+button {
+    width: 100%;
+    padding: 18px;
+    background: #00eaff33;
+    border: 2px solid #00eaff;
+    color: #00eaff;
+    font-size: 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+button:hover {
+    background: #00eaff;
+    color: #00131f;
+    font-weight: bold;
+}
+.download-btn {
+    display: none;
+    width: 100%;
+    margin-top: 15px;
+    padding: 18px;
+    background: #00ff9d;
+    color: #002015;
+    text-decoration: none;
+    font-size: 22px;
+    border-radius: 12px;
+    font-weight: bold;
+}
+.line { margin-bottom: 10px; }
+
+</style>
+</head>
+<body><div class="terminal" id="screen"></div><div class="download-area">
+    <button id="startBtn">INITIATE DOWNLOAD SEQUENCE</button>
+
+    <!-- UPDATED APK LINK HERE -->
+    <a id="finalDownload" class="download-btn" href="HV Player By Anish Saini.apk" download>DOWNLOAD VH PLAYER</a>
+
+</div><script>
+const screen = document.getElementById("screen");
+const btn = document.getElementById("startBtn");
+const downloadBtn = document.getElementById("finalDownload");
+
+function write(msg, delay = 40) {
+    return new Promise(res => {
+        let div = document.createElement('div');
+        div.className = 'line';
+        screen.appendChild(div);
+
+        let i = 0;
+        let interval = setInterval(() => {
+            div.textContent += msg.charAt(i);
+            i++;
+            screen.scrollTop = screen.scrollHeight;
+            if (i === msg.length) {
+                clearInterval(interval);
+                res();
+            }
+        }, delay);
+    });
+}
+
+btn.onclick = async () => {
+    btn.style.display = "none";
+    screen.innerHTML = "";
+
+    await write("⟨ SYSTEM ONLINE ⟩");
+    await write("Contacting To Anish's Server...");
+    await new Promise(r => setTimeout(r, 1880));
+
+    await write("Loading Secure Environment ...");
+    await new Promise(r => setTimeout(r, 1300));
+
+    await write(" Name Of Creator - Anish Saini ✓...");
+    await new Promise(r => setTimeout(r, 1900));
+
+    await write("Asking Permission From Anish Sir...");
+    await new Promise(r => setTimeout(r, 2000));
+
+    await write("ACCESS GRANTED ✔");
+    await write("Scanning Your Face To Identify...");
+    await new Promise(r => setTimeout(r, 2100));
+
+    await write("Signature Verified: ANISH SIR AUTHORIZED ✔");
+    await write("Permission Granted Successfully ✔");
+    await new Promise(r => setTimeout(r, 1900));
+
+    await write("Channel Encryption: AES-4096 Active ✔");
+    await write(" Anish Sir Is Providing Apk Wait a few Second..");
+    await new Promise(r => setTimeout(r, 1900));
+
+    await write(" 3 ....2......1...Preparing Secure Download Link.... Thanks For Using ");
+    await new Promise(r => setTimeout(r, 1800));
+
+    downloadBtn.style.display = "block";
+    await write("✔ VH Player APK Ready. Scroll down to Download.");
+};
+</script></body>
+</html>
